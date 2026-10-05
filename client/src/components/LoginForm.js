@@ -36,7 +36,12 @@ export default function LoginForm({userData, setUserData}) {
                     value={userData.password}
                     onChange={(e) => setUserData({...userData, password: e.target.value})}
                 />
-                <Button variant='warning' id="showPasswordBtn" size="sm" onClick={() => setShowPassword(!showPassword)}>
+                <Button 
+                    variant='warning' 
+                    id="showPasswordBtn" 
+                    size="sm" 
+                    onClick={() => setShowPassword(!showPassword)}
+                    >
                     {showPassword ? <Eye size={16} /> : <EyeOff size={16}  />}
                 </Button>
             </div>
@@ -47,7 +52,7 @@ export default function LoginForm({userData, setUserData}) {
                 name="rememberMe"
                 id="rememberMe"
                 checked={userData.rememberMe}
-                onChange={(e) => userData.setRememberMe(e.target.checked)}
+                onChange={(e) => setUserData({...userData, rememberMe: e.target.checked})}
             />
             <label htmlFor="rememberMe" className='loginLabel'>
                 REMEMBER ME
@@ -57,7 +62,8 @@ export default function LoginForm({userData, setUserData}) {
     </Stack>
         </div>
         <div id="submitBtnBlock">
-            <Button variant='light' type='submit'>
+            <Button 
+            variant='light' type='submit'>
                 SIGN IN
             </Button>
       </div>
