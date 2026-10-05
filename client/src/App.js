@@ -1,5 +1,6 @@
 // App.js
 import React, {useState} from 'react'
+import './App.css';
 import Container from 'react-bootstrap/Container';
 import { Route, Routes } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
@@ -23,7 +24,7 @@ export default function App() {
   
   return (
     <>
-      <Container>
+      <Container id='appContainer'>
        <Row id='globalErrorRow'>
           <Col xs={0} md id='errorCol1'/>
           <Col xs={12} md={6} id='globalErrorCol' aria-live='polite'>
