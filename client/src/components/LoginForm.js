@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import '../css/componentCss/FormSetup.css'
+import '../css/componentCss/LoginForm.css'
 import Button from 'react-bootstrap/Button';
 import Stack from 'react-bootstrap/Stack';
 import { Eye, EyeOff  } from 'lucide-react';
@@ -11,14 +13,14 @@ export default function LoginForm() {
                 <Stack gap={3}>
       <div className="p-2">
             <label className='loginLabel'>USERNAME:</label>
-            <input type="text" className='loginInput' placeholder='USERNAME'/>
+            <input type="text" className='input' placeholder='USERNAME'/>
       </div>
       <div className="p-2">
             <label className='loginLabel'>PASSWORD:</label>
-            <div>
+            <div id="passwordInputContainer">
                 <input
-                    type="password"
-                    className='loginInput'
+                    type={showPassword ? 'text' : 'password'}
+                    className='input'
                     placeholder='PASSWORD'
                 />
                 <Button variant='warning' id="showPasswordBtn" size="sm" onClick={() => setShowPassword(!showPassword)}>

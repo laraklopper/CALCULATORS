@@ -5,9 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Login from './pages/Login';
-import Register from './pages/Register';
+import Registration from './pages/Registration';
 import Home from './pages/Home';
-import { Bug } from 'react-bootstrap-icons';
+import { Bug } from 'lucide-react';
 export default function App() {
   const [userData, setUserData] = useState({
     username: '',
@@ -17,7 +17,7 @@ export default function App() {
     isAdmin: false,
   }); // State to hold user data
   const [currentUser, setCurrentUser] = useState(null); // State to hold the currently logged-in user
-  const [users, setUsers] = useState([]); // State to hold user data
+  // const [users, setUsers] = useState([]); // State to hold user data
   const [loggedIn, setLoggedIn] = useState(false); // State to track if the user is logged in
   const [error, setError] = useState(null); // State to hold error messages
   
@@ -38,14 +38,16 @@ export default function App() {
         </Row>
       <Routes>
         {loggedIn ? (
-          <div>
+          <>
             <Route path="/" element={<Home />} />
-          </div>
+          </>
         ) : (
-          <div>
-            <Route path="/" element={<Login />} />
-            <Route path="/reg" element={<Register />} />
-          </div>
+        <>
+  <Route path="/" element={<Login />} />
+            <Route path="/reg" element={<Registration />} />
+        </>
+          
+      
         )}
       </Routes>
       </Container>
