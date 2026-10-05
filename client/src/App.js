@@ -40,11 +40,13 @@ export default function App() {
       <Routes>
         {loggedIn ? (
           <>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home currentUser={currentUser} />} />
           </>
         ) : (
         <>
-  <Route path="/" element={<Login />} />
+  <Route path="/" element={<Login 
+userData={userData} setUserData={setUserData} setLoggedIn={setLoggedIn} setError={setError}
+  />} />
             <Route path="/reg" element={<Registration />} />
         </>
           
