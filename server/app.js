@@ -1,1 +1,39 @@
-// app.js
+// app.js (server-side)
+/* Load environment variables from a .env 
+file using the dotenv package*/
+require('dotenv').config(); // Load environment variables from a .env file
+const express = require('express'); // Import the Express framework
+const ensureJwtSecret = require('./config/ensureJwtSecret'); // Import the ensureJwtSecret function
+ensureJwtSecret();// Ensure JWT secret is set and retrieve it
+const cors = require('cors'); // Import the CORS middleware
+const helmet = require('helmet'); // Import the Helmet middleware for security
+const mongoose = require('mongoose'); // Import Mongoose for MongoDB interactions
+const app = express(); // Create an Express application instance
+const port = process.env.PORT || 3000; // Define the port to listen on, defaulting to 3000
+const connectDB = require('./config/connect'); // Import the database connection function
+
+
+//================SETUP MIDDLEWARE========================
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // Middleware to parse URL-encoded bodies
+app.use(cors()); // Use the CORS middleware
+app.use(helmet()); // Use Helmet for security headers
+
+
+//===============ROUTES========================
+// Prefix all route modules with their base path.
+// ================== MONGOOSE CONFIG ==================
+// Disable strict populate to prevent errors
+// when populating paths that are conditionally defined
+mongoose.set('strictPopulate', false)
+mongoose.set('strictQuery', true); // Set Mongoose to use strict query mode
+
+//==============START THE SERVER========================
+connectDB().then(() => {
+    app.listen(port, () => {
+        console.info(`[INFO:app.js] server is running on ${port}`)// Log a message in the console indicating the server is running
+    })
+}).catch((error) => {
+    console.error('[ERROR: app.js]: Database connection failed');// Log an error message in the console for debugging purposes
+    process.exit(1);//Exit if connection failed
+})
