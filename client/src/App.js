@@ -1,9 +1,13 @@
 // App.js
 import React, {useState} from 'react'
 import Container from 'react-bootstrap/Container';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-
+import { Route, Routes } from 'react-router-dom';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Home from './pages/Home';
+import { Bug } from 'react-bootstrap-icons';
 export default function App() {
   const [userData, setUserData] = useState({
     username: '',
@@ -20,7 +24,30 @@ export default function App() {
   return (
     <>
       <Container>
-       
+       <Row id='globalErrorRow'>
+          <Col xs={0} md id='errorCol1'/>
+          <Col xs={12} md={6} id='globalErrorCol' aria-live='polite'>
+          {/* ---------GLOBAL EROR MA */}
+            <div id='globalErrorBlock' role='alert' aria-atomic='true'>
+              {error && 
+              <p id='errorMessage'><Bug size={20} fontWeight={900} aria-hidden='true'/>{error}</p>
+              }
+            </div>
+          </Col>
+          <Col xs={0} md id='errorCol2'/>
+        </Row>
+      <Routes>
+        {loggedIn ? (
+          <div>
+            <Route path="/" element={<Home />} />
+          </div>
+        ) : (
+          <div>
+            <Route path="/" element={<Login />} />
+            <Route path="/reg" element={<Register />} />
+          </div>
+        )}
+      </Routes>
       </Container>
     </>
   )
