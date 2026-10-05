@@ -5,3 +5,11 @@
     padding:0px;
     font-family: 'Roboto', sans-serif;
 }
+#passwordInput{
+    width:200px;
+    height:40px;
+    border-radius:5px;
+    font-size:20px;
+    margin:0px;
+    padding:4px;
+}
