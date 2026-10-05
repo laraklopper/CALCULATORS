@@ -5,7 +5,11 @@ import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
 import { NavLink } from 'react-router-dom';
 
-export default function MainHeader({ pageHeading }) {
+export default function MainHeader(
+    {
+         pageHeading 
+    }
+    ) {
   return (
     <header id="mainHeader" role="banner">
         <Row id="mainHeaderRow1">
@@ -16,7 +20,7 @@ export default function MainHeader({ pageHeading }) {
             <Col xs={6} id="mainHeaderCol2">
                 <div id="mainHeaderPanal">
                     {/* Header Content */}
-                    <h1 id="appTitle">Welcome to Our Application</h1>
+                    <h1 id="appTitle">CALCULATOR APP</h1>
                     <h2 id="pageHeading">{pageHeading}</h2>
                 </div>
             </Col>

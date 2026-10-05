@@ -5,3 +5,9 @@
     display: flex;
     justify-content: center;
 }
+#appTitle{
+    font-size: 28px;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}

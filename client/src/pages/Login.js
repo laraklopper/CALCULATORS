@@ -5,7 +5,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import LoginForm from '../components/LoginForm';
 import MainHeader from '../components/MainHeader';
-export default function Login({userData, setUserData}) {
+export default function Login(
+    {
+        userData, 
+        setUserData, 
+        setError
+    }
+    ) {
 
     const submitLogin = useCallback(async () => {
        try {
