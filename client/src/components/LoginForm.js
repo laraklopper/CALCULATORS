@@ -7,8 +7,11 @@ import { Eye, EyeOff  } from 'lucide-react';
 export default function LoginForm({userData, setUserData}) {
     const [showPassword, setShowPassword] = useState(false);
     const [pswdMsg, setPswdMsg] = useState(false);
+
+    
   return (
-    <form id="loginForm">
+    <form id="loginForm" method="POST" aria-labelledby='formTitle'>
+    <p className='visuallyHidden' id='formTitle'>LOGIN FORM</p>
     <div id="formHeadingBlock">
 <h3 id="formHeading">SIGN IN</h3>
     </div>
@@ -51,7 +54,7 @@ export default function LoginForm({userData, setUserData}) {
       <div>
         {pswdMsg && (
             <div id="passwordMsg">
-            <p>WE WILL NEVER SHARE YOUR PASSWORD.</p>
+                <p className='msgText'>WE WILL NEVER SHARE<br/> YOUR PASSWORD.</p>
             </div>
         )}
       </div>

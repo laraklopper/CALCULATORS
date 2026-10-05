@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function MainHeader({ pageHeading }) {
   return (
-    <header id="mainHeader">
+    <header id="mainHeader" role="banner">
         <Row id="mainHeaderRow1">
             <Col id="mainHeaderCol1"/>
         </Row>
@@ -16,8 +16,8 @@ export default function MainHeader({ pageHeading }) {
             <Col xs={6} id="mainHeaderCol2">
                 <div id="mainHeaderPanal">
                     {/* Header Content */}
-                    <h1 id="mainHeaderTitle">Welcome to Our Application</h1>
-                    <h2>{pageHeading}</h2>
+                    <h1 id="appTitle">Welcome to Our Application</h1>
+                    <h2 id="pageHeading">{pageHeading}</h2>
                 </div>
             </Col>
             <Col/>
@@ -25,8 +25,8 @@ export default function MainHeader({ pageHeading }) {
         <Row id="mainHeaderNavRow">
             <Col id="mainHeaderCol3">
              <Stack direction="horizontal" gap={3} id="mainHeaderNavStack">
-      <div className="p-2">First item</div>
-      <div className="p-2 ms-auto">Second item</div>
+      <div className="p-2"></div>
+      <div className="p-2 ms-auto"></div>
       <div className="vr" />
       <div className="p-2">
         <nav id="mainHeaderNav">
