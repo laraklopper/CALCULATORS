@@ -8,7 +8,7 @@ export default function Login({userData}) {
   return (
     <div id="pageContainer">
         <section id="loginSection">
-            <div id="loginFormContainer">
+            <div id="loginFormBlock">
              <Row id="loginFormRow">
                 <Col id="loginFormCol1"/>
                 <Col xs={6} id="loginFormCol2">
