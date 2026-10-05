@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React from 'react'
 import '../css/pagesCss/LoggedOut.css'
 import '../css/pagesCss/pageSetup.css'
 import Row from 'react-bootstrap/Row';
@@ -13,13 +13,7 @@ export default function Login(
     }
     ) {
 
-    const submitLogin = useCallback(async () => {
-       try {
-        
-       } catch (error) {
-        
-       } 
-    },[])
+
   return (
     <div id="pageContainer">
     <MainHeader pageHeading="LOGIN"/>
