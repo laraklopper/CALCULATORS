@@ -1,8 +1,26 @@
+#formHeadingBlock{
+    width:100%;
+    margin:0px;
+    padding:0px;
+    display:flex;
+    justify-content:center;
+}
+#formHeading{
+    font-weight:700;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-family: "Roboto Mono", monospace;
+    font-size: 28px;
+    letter-spacing: 2px;
+    text-decoration: underline;
+}
 .input{
     width:200px;
     height:40px;
     border-radius:5px;
-    font-size:20px;
+    font-size:16px;
     margin:0px;
     padding:4px;
+    font-family: "Fira Mono", monospace;
 }

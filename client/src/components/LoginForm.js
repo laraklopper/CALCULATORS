@@ -8,7 +8,10 @@ export default function LoginForm() {
     const [showPassword, setShowPassword] = useState(false);
   return (
     <form id="loginForm">
-        <h3>SIGN IN</h3>
+    <div id="formHeadingBlock">
+<h3 id="formHeading">SIGN IN</h3>
+    </div>
+        
         <div id="loginFormInput">
                 <Stack gap={3}>
       <div className="p-2">

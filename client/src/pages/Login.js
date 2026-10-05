@@ -4,9 +4,11 @@ import '../css/pagesCss/pageSetup.css'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import LoginForm from '../components/LoginForm';
+import MainHeader from '../components/MainHeader';
 export default function Login({userData}) {
   return (
     <div id="pageContainer">
+    <MainHeader pageHeading="LOGIN"/>
         <section id="loginSection">
             <div id="loginFormBlock">
              <Row id="loginFormRow">

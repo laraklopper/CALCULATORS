@@ -1,0 +1,7 @@
+#mainHeader{
+    width: 100%;
+    margin: 0px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
