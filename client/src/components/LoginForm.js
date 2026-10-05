@@ -35,6 +35,8 @@ export default function LoginForm({userData, setUserData}) {
                     name='password'
                     value={userData.password}
                     onChange={(e) => setUserData({...userData, password: e.target.value})}
+                    onfocus={() => setPswdMsg(true)}
+                    onblur={() => setPswdMsg(false)}
                 />
                 <Button 
                     variant='warning' 
@@ -45,6 +47,13 @@ export default function LoginForm({userData, setUserData}) {
                     {showPassword ? <Eye size={16} /> : <EyeOff size={16}  />}
                 </Button>
             </div>
+      </div>
+      <div>
+        {pswdMsg && (
+            <div id="passwordMsg">
+            <p>WE WILL NEVER SHARE YOUR PASSWORD.</p>
+            </div>
+        )}
       </div>
       <div className="p-2" id="rememberMeBlock">
             <input
