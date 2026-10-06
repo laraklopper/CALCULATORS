@@ -16,6 +16,7 @@ export default function App() {
     dateOfBirth: '',
     password: '',
     isAdmin: false,
+    rememberMe: false,
   }); // State to hold user data
   const [currentUser, setCurrentUser] = useState(null); // State to hold the currently logged-in user
   // const [users, setUsers] = useState([]); // State to hold user data
@@ -45,6 +46,7 @@ export default function App() {
         ) : (
         <>
   <Route path="/" element={<Login 
+  setCurrentUser={setCurrentUser}
 userData={userData} setUserData={setUserData} setLoggedIn={setLoggedIn} setError={setError}
   />} />
             <Route path="/reg" element={<Registration />} />
