@@ -1,13 +1,44 @@
 #mainHeader{
-    width: 100%;
-    margin: 0px;
-    padding: 10px;
+  width: 100%;
+    margin: 10px 0px;
+    padding: 10px 5px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: olivedrab;
 }
 #appTitle{
     font-size: 28px;
     margin: 0px;
     padding: 0px;
     text-align: center;
+}
+#mainHeaderRow1,
+#mainHeaderRow2,
+#mainHeaderNavRow{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+#mainHeaderCol1,
+#mainHeaderCol3{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+}
+#mainHeadingCol1,
+#mainHeadingCol2{
+    margin: 0px;
+    padding: 0px;
+}
+#mainHeadingCol{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+}
+#mainHeaderNavStack{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }

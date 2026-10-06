@@ -16,15 +16,15 @@ export default function MainHeader(
             <Col id="mainHeaderCol1"/>
         </Row>
         <Row id="mainHeaderRow2">
-            <Col/>
-            <Col xs={6} id="mainHeaderCol2">
+            <Col id='mainHeadingCol1'/>
+            <Col xs={6} id="mainHeaderCol">
                 <div id="mainHeaderPanal">
                     {/* Header Content */}
                     <h1 id="appTitle">CALCULATOR APP</h1>
                     <h2 id="pageHeading">{pageHeading}</h2>
                 </div>
             </Col>
-            <Col/>
+            <Col id='mainHeadingCol2'/>
         </Row>
         <Row id="mainHeaderNavRow">
             <Col id="mainHeaderCol3">
