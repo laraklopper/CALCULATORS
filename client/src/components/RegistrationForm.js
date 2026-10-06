@@ -19,25 +19,63 @@ export default function RegistrationForm() {
             <h3 id='formHeading'>SIGN UP</h3>
         </div>
         <div id='registerInput'>
-        {/*  GROUP 1: username, email*/}
+        {/*  GROUP 1: username, email, date of birth*/}
             <div id='regisGroup1'>
-                 <Stack gap={3}>
+        <Stack direction="horizontal" gap={3}>
       <div className="p-2">
         {/*  username*/}
-        <label>USERNAME:</label>
+        <label className='regisLabel'>USERNAME:</label>
         <div>
-            <input/>
+            <input
+                type='text'
+                id='regisUsername'
+                className='input'
+                required
+                autoComplete='username'
+                // name=''
+                // value={}
+                // onChange={}
+            />
             <Asterisk size={14}/>
         </div>
       </div>
-      {/* Email */}
-      <div className="p-2">
+      <div className="p-2 ms-auto">Second item</div>
+      <div className="p-2">Third item</div>
+    </Stack>
 
-      </div>   
+    <Stack direction="horizontal" gap={3}>
+    <div className="p-2">
+        <label>EMAIL:</label>
+        <div>
+            <input
+                className='input'
+                id='regisEmailInput'
+                type='text'
+                required
+                // name=''
+                // value={}
+                // onChange={}
+            />
+            <Asterisk size={14}/>
+        </div>
+      </div>  
+          <div className="p-2 ms-auto">Second item</div>
+      <div className="p-2">Third item</div>
     </Stack>
                  <Stack direction="horizontal" gap={3}>
                  {/* Date of Birth */}
-      <div className="p-2">First item</div>
+      <div className="p-2">
+        <label className='regisLabel'>DATE OF BIRTH:</label>
+        <div>
+            <input
+                type='date'
+                className='input'
+                id='regisDateInput'
+                required
+            />
+            <Asterisk size={14}/>
+        </div>
+      </div>
       <div className="p-2 ms-auto">Second item</div>
       <div className="p-2">Third item</div>
     </Stack>
