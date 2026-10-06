@@ -104,6 +104,17 @@ export default function LoginForm({userData, setUserData, submitLogin}) {
                     onChange={(e) => setUserData({...userData, password: e.target.value})}
                     onfocus={() => setPswdMsg(true)}
                     onblur={() => setPswdMsg(false)}
+                    // ARIA ATTRIBUTES:
+                            aria-label='password'// Provide a label for screen readers (also have a visible label for sighted users)
+                            aria-required="true"// Mark the field as required for assistive technologies
+                            aria-invalid={passwordEmpty ? 'true' : 'false'}// Mark invalid if empty (simple validation)
+                            aria-describedby={[// Conditionally include help and error message IDs based on state
+                                pswdMsg ? passwordHelpId : null,// Include help ID if help message is shown
+                                passwordEmpty ? passwordErrorId : null,// Include error ID if password is empty (invalid)
+                            ]
+                                .filter(Boolean)// Filter out null values
+                                .join(' ')}// Combine IDs into a space-separated string for aria-describedby
+                            inputMode="text"// Helpful on mobile keyboards (password fields often still want text input mode for better keyboard options)
                 />
                 <Button 
                     variant='warning' 
@@ -135,6 +146,7 @@ export default function LoginForm({userData, setUserData, submitLogin}) {
                 id="rememberMe"
                 checked={userData.rememberMe}
                 onChange={(e) => setUserData({...userData, rememberMe: e.target.checked})}
+                // ARIA ATTRIBUTES
             />
             <label htmlFor="rememberMe" className='loginLabel'>
                 REMEMBER ME
