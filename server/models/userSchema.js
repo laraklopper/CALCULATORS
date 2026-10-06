@@ -41,10 +41,16 @@ const userSchema = new mongoose.Schema({
         maxlength: [1024, 'Password cannot exceed 1024 characters'],// Maximum password length (allow room for hashed passwords).
         select: false  // Excluded from query results by default — must be explicitly requested to avoid leaking hashed passwords
     },
-    admin: {
-        type: Boolean,
-        default: false,
-    }
+    /*Field for admin status: 
+     ROLE BASED ACCESS CONTROL:
+    - true = admin privileges, 
+    - false/undefined = regular user
+     */
+    admin :{
+      type: Boolean,//Indicate data type as a boolean
+      required: false,// Optional because normal users may not need this field.
+      default: false, // New users are regular users unless explicitly made an admin.
+    },
 },{
     timeStamps: true,
     toJSON: {virtuals: true},  
