@@ -59,3 +59,26 @@ LAYOUT
     margin:0px;
     padding:0px;
 }
+#registrationSection{
+    width:100%;
+    background-color: #73995a;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0px;
+    padding:10px 0px;
+}
+#regisRow1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+#regisCol1{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
