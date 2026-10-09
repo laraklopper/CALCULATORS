@@ -26,3 +26,15 @@
     text-align: center;
     font-family: "Fira Mono", monospace;
 }
+.formErrorSpan{
+        display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0px;
+    padding: 0px;
+}
+.errorText{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}

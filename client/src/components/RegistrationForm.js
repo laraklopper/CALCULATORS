@@ -24,11 +24,12 @@ export default function RegistrationForm() {
         <div id='registerInput'>
         {/*  GROUP 1: username, email, date of birth*/}
             <div id='regisGroup1'>
-        <Stack gap={3} id='regisStack1'>
+            {/* STACK 1: USERNAME */}
+            <Stack direction="horizontal" gap={3} id='regisStack1'>
       <div className="p-2" id='regisUsernameBlock'>
         {/*  username*/}
+        <div className='inputDiv'>
         <label className='regisLabel'>USERNAME:</label>
-        <div>
             <input
                 type='text'
                 id='regisUsername'
@@ -39,13 +40,21 @@ export default function RegistrationForm() {
                 // value={}
                 // onChange={}
             />
-            <Asterisk size={14}/>
+            <Asterisk color="#C22419" fontWeight={700} size={12} aria-hidden='true' focusable='false' />
+        </div>
+        <div>
+           <span className='formErrorSpan'>
+            <Bug color="#C22419" fontWeight={700} size={16} aria-hidden='true' focusable='false'/><p>Username is required</p>
+        </span>
         </div>
       </div>
-      <div className="p-2" id='regisEmailBlock'>
-    <div>
- <label className='regisLabel'>EMAIL:</label>
+      <div className="p-2 ms-auto"></div>
+      <div className="p-2"></div>
+    </Stack>
+<Stack direction="horizontal" gap={3} id='regisStack2'>
+      <div className="p-2" id="regisEmailBlock">
         <div className='inputDiv'>
+        <label className='regisLabel' htmlFor='regisEmailInput'>EMAIL:</label>
             <input
                 className='input'
                 id='regisEmailInput'
@@ -54,31 +63,29 @@ export default function RegistrationForm() {
                 // name=''
                 // value={}
                 // onChange={}
+                onFocus={()=>  setEmailMsg (true) }
+                onBlur={() => setEmailMsg(false)}
             />
             <Asterisk color="#C22419" fontWeight={700} size={12} aria-hidden='true' focusable='false' />
         </div>
-        {/* REQUIRED MESSAGE */}
-        <div>
-        <Bug/><p>Email is requrired</p>
-        </div>
-    </div>
-       {emailMsg && (
-        <div>
+          {/* REQUIRED MESSAGE */}
+        <span className='formErrorSpan'>
+        <Bug color="#C22419" fontWeight={700} size={16} aria-hidden='true' focusable='false'/><p className='errorText'>Email is required</p>
+        </span>
+      </div>
+      <div className="p-2 ms-auto"></div>
+      {emailMsg && (
+        <div className="p-2">
             <p>We will never share your email</p>
         </div>
-       )}
-      </div>  
-          
-      <div className="p-2">Third item</div>
-    </Stack>
 
-  
-                 <Stack direction="horizontal" gap={3} id='regisStack2'>
+      )}
+    </Stack>
+                 <Stack direction="horizontal" gap={3} id='regisStack3'>
                  {/* Date of Birth */}
       <div className="p-2" id='regisBirthDateBlock'>
-      <div>
+        <div className='inputDiv'>
         <label className='regisLabel'>DATE OF BIRTH:</label>
-        <div>
             <input
                 type='date'
                 className='input'
@@ -87,17 +94,17 @@ export default function RegistrationForm() {
             />
             <Asterisk color="#C22419" fontWeight={700} size={12} aria-hidden='true' focusable='false' />
         </div>
-      </div>
+  
+          <span className='formErrorSpan'>
+             <Bug color="#C22419" fontWeight={700} size={16} aria-hidden='true' focusable='false'/><p className='errorText'>Email is required</p>
+          </span>
         
-        <div>
-            <p>All users must be 16 years or onler and 
-    Admin Users must be 18 or older</p>
-        </div>
       </div>
-      <div className="p-2 ms-auto">Second item</div>
-      <div className="p-2">Third item</div>
-    </Stack>
-                
+      <div className="p-2 ms-auto"></div>
+      <div className="p-2">
+        <p>All users must be 16 years or older</p>
+      </div>
+    </Stack>    
             </div>
             {/* PASSWORD AND ADMIN */}
             <div id='regisGroup2'>
@@ -124,14 +131,23 @@ export default function RegistrationForm() {
             <Asterisk color="#C22419" fontWeight={700} size={12} aria-hidden='true' focusable='false' />
         </div>
       </div>
-      <div className="p-2 ms-auto">Second item</div>
-      <div className="p-2">Third item</div>
+      <div className="p-2 ms-auto">
+        <span className='formErrorSpan'>
+        <Bug color="#C22419" fontWeight={700} size={16} aria-hidden='true' focusable='false'/><p className='errorText'>Email is required</p>
+        </span>
+      </div>
+      <div className="p-2"></div>
     </Stack>
     <Stack direction="horizontal" gap={3}>
       <div className="p-2">
-        <label className='regisLabel'>REGISTER AS ADMIN</label>
+        <label className='regisLabel' htmlFor='regisAdmin'>REGISTER AS ADMIN</label>
         <input
             type='checkbox'
+            id='regisAdmin'
+            // name=''
+            // value={}
+            // onChange={}
+            aria-required='false'
         />
       </div>
       <div className="p-2 ms-auto">Second item</div>

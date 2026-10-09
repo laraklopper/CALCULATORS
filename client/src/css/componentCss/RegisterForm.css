@@ -35,17 +35,16 @@
     background: #D6D6D6;
 }
 #regisUsernameBlock,
-#regisEmailBlock,
-#regisBirthDateBlock{
+#regisBirthDateBlock,
+#regisEmailBlock{
     display: flex;
     margin: 0px;
     padding: 0px;
-    width: 100%;
-    align-items: baseline;
+    align-items: flex-start;
     gap: 10px;
+    flex-direction: column;
 }
 .regisLabel{
-    
     font-weight:700;
     margin:0px;
     padding:0px;
