@@ -2,22 +2,22 @@
   display:flex;
   flex-direction:column;
   align-items:center;
-    width:100%;
-    height:100%;
+    width:100%;  
     margin:0px;
     overflow-y: scroll;
     background-color:olive;
     padding:0px;
 }
 #root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width:100%;
-    height:100%;
     margin:0px;
     padding:0px;
 }
 #appContainer{
     width:100%;
-    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
