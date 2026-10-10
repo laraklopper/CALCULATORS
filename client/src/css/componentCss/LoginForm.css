@@ -1,4 +1,5 @@
-
+/* LoginForm.css
+LoginForm.js*/
 #loginForm{
     background-color: #A8AEB3;
     width: 400px;
@@ -6,8 +7,11 @@
     flex-direction:column;
     align-items:center;
     padding: 10px;
-    
+    gap: 10px;
 }
+/* ================
+INPUT LAYOUT
+======*/
 #loginFormInput{
     width:80%;
     display:flex;
@@ -58,6 +62,7 @@
     margin:0px;
     padding:0px;
 }
+/* BUTTON:  */
 #showPasswordBtn{
     display:flex;
     justify-content:center;
@@ -66,4 +71,10 @@
     padding:0px;
     height: 40px;
     width: 40px;
+    color: #000000;
+    border: #323A42 solid 1.5px;
+}
+#showPasswordBtn:hover{
+    color: #E8F0F6;
+    background-color: #323A42;
 }

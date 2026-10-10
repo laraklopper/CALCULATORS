@@ -35,8 +35,8 @@ export default function MainHeader(
       <div className="p-2">
         <nav id="mainHeaderNav">
                     <ul id="mainHeaderNavList">
-                        <li className='linkItem'><NavLink className="navLink" to="/">Login</NavLink></li>
-                        <li className='linkItem'><NavLink className="navLink" to="/reg">Register</NavLink></li>
+                        <li className='linkItem'><NavLink className="refLink" to="/">Login</NavLink></li>
+                        <li className='linkItem'><NavLink className="refLink" to="/reg">Register</NavLink></li>
                     </ul> 
                 </nav>
       </div>
